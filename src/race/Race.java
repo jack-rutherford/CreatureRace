@@ -1,11 +1,22 @@
 package race;
 
+import java.util.Random;
+
 public class Race implements RaceInterface {
 
+	private char[] racetrack;
+	private static char[] terrain;
+	private Random rand;
+	
+	
+	public Race(){
+		terrain = new char[] {'.', '#', 'O', '~', '|'};
+		rand = new Random();
+	}
+	
 	@Override
 	public char[] getRacetrack() {
-		// TODO Auto-generated method stub
-		return null;
+		return racetrack;
 	}
 
 	@Override
@@ -28,7 +39,16 @@ public class Race implements RaceInterface {
 
 	@Override
 	public void createRace(int length, int numRacers) {
-		// TODO Auto-generated method stub
+		racetrack = new char[length];
+		for(int i = 0; i < racetrack.length; i++) {
+			int num1 = rand.nextInt(4);
+			if(racetrack[i] == racetrack.length-1) {
+				racetrack[i] = terrain[4]; //finish line
+			}
+			else {
+				racetrack[i] = terrain[num1];
+			}
+		}
 		
 	}
 
