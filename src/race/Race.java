@@ -22,8 +22,7 @@ public class Race implements RaceInterface {
 
 	@Override
 	public String getRacerName(int racerIndex) {
-		// TODO Auto-generated method stub
-		return null;
+		return "";
 	}
 
 	@Override
@@ -50,7 +49,7 @@ public class Race implements RaceInterface {
 				racetrack[i] = terrain[num1];
 			}
 		}
-		//System.out.println(racetrack);
+		System.out.println(racetrack);
 		createRacers(numRacers);
 
 	}
