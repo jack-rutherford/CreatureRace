@@ -9,7 +9,7 @@ private int movementPoints ;
 	}
 
 		@Override
-		public void move() {
+		public void move(char[] racetrack, int movementPoints) {
 			// TODO Auto-generated method stub
 			Random rand = new Random();
 			movementPoints = rand.nextInt(4)+1;
