@@ -9,10 +9,10 @@ private int movementPoints ;
 	}
 
 		@Override
-		public void move() {
+		public void move(char[] racetrack, int movementPoints) {
 			// TODO Auto-generated method stub
 			Random rand = new Random();
-			movementPoints = rand.nextInt(1,5);
+			movementPoints = rand.nextInt(4)+1;
 			char[] track = this.getTrack();
 			while(movementPoints > 0 && racePos < track.length) {
 				if(track[racePos] == '#') {
