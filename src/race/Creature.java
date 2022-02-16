@@ -6,7 +6,7 @@ public abstract class Creature {
 	private int maximumSpeed;
 	private String name;
 //	private Race race;
-	protected char[] racetrack;
+	protected char[] raceTrack;
 	protected int racePos;
 	protected boolean flag;
 
@@ -14,7 +14,7 @@ public abstract class Creature {
 	public Creature(String name, int movementSpeed, char[] track) {
 		this.name = name;
 		this.maximumSpeed = movementSpeed;
-		racetrack = track;
+		raceTrack = track;
 		racePos = 0;
 	}
 
@@ -39,7 +39,7 @@ public abstract class Creature {
 	 * @return flag
 	 */
 	public boolean isWinner() {
-		if(racePos == racetrack.length-1) {
+		if(racePos == raceTrack.length-1) {
 			flag = true;
 		}
 		return flag;
@@ -55,8 +55,35 @@ public abstract class Creature {
 		Random rand = new Random();
 		return rand.nextInt(maximumSpeed)+1;
 	}
-
-	public abstract void move(int movePoints);
+	
+	/**
+	 * Accessor method for the race track. 
+	 * @return raceTrack
+	 */
+	protected char[] getTrack() {
+		return raceTrack;
+	}
+	
+	/**
+	 * Accessor method for racePos. 
+	 * @return
+	 */
+	protected int getPosition() {
+		return racePos;
+	}
+	
+	/**
+	 * Increments the position
+	 * @return racePos++
+	 */
+	protected int incrementPosition() {
+		return racePos++;
+	}
+	
+	/**
+	 * Abstract method for move method
+	 */
+	public abstract void move();
 
 	
 	
