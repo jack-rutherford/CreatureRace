@@ -8,7 +8,6 @@ public abstract class Creature {
 	
 	public void setRaceTrack(){
 		raceTrack = race.getRacetrack();
+				
 	}
-	
-	public abstract void move();
 }
