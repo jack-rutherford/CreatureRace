@@ -8,7 +8,7 @@ public class Ostrich extends Creature {
 	}
 
 	@Override
-	public void move(char[] track) {
+	public void move(int movePoints) {
 		// TODO Auto-generated method stub
 		
 	}

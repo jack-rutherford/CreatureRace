@@ -1,31 +1,63 @@
 package race;
 
+import java.util.Random;
+
 public abstract class Creature {
-	private int movementSpeed;
+	private int maximumSpeed;
 	private String name;
-	private Race race;
-	private char[] raceTrack;
+//	private Race race;
+	protected char[] racetrack;
 	protected int racePos;
-	
-	
+	protected boolean flag;
+
+
 	public Creature(String name, int movementSpeed, char[] track) {
 		this.name = name;
-		this.movementSpeed = movementSpeed;
-		raceTrack = track;
+		this.maximumSpeed = movementSpeed;
+		racetrack = track;
 		racePos = 0;
 	}
-	
+
+	/**
+	 * Accessor method for name
+	 * @return name
+	 */
 	public String getName(){
 		return name;
 	}
 	
-	public char[] getRaceTrack() {
-		return raceTrack;
+	/**
+	 * Accessor method for maximumSpeed
+	 * @return maximumSpeed
+	 */
+	public int getMaximumSpeed() {
+		return maximumSpeed;
 	}
 	
-	public int getMoveSpeed() {
-		return movementSpeed;
+	/**
+	 * checks if the racer has one by checking their current position
+	 * @return flag
+	 */
+	public boolean isWinner() {
+		if(racePos == racetrack.length-1) {
+			flag = true;
+		}
+		return flag;
 	}
 	
-	public abstract void move(char[] track);
+	/**
+	 * returns a random number of movement points 
+	 * based on creatures max speed
+	 * @param maxMove
+	 * @return randomMovePoints
+	 */
+	public int randomMovementPoints(int maxMove) {
+		Random rand = new Random();
+		return rand.nextInt(maximumSpeed)+1;
+	}
+
+	public abstract void move(int movePoints);
+
+	
+	
 }
