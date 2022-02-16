@@ -4,7 +4,10 @@ import java.lang.reflect.Array;
 import java.util.Random;
 
 public class Monkey extends Creature {
-	private int movementPoints;
+	
+	public Monkey(String name, int speed, char[] track) {
+		super(name, 4, track);
+	}
 
 	public void move(char[] raceTrack){
 		Random numb = new Random();

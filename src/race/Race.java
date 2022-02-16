@@ -50,26 +50,26 @@ public class Race implements RaceInterface {
 				racetrack[i] = terrain[num1];
 			}
 		}
-
-		createRacers(numRacers);
+	System.out.println(racetrack);
+		//createRacers(numRacers);
 
 	}
 	
-	public void createRacers(int numRacers) {
-		racers = new Creature[numRacers];
-		for(int i = 0; i < racers.length; i++) {
-			int num1 = rand.nextInt(3);
-			if(num1 == 0) {
-				racers[i] = new Monkey("Name", racetrack);
-			}
-			else if(num1 == 1) {
-				racers[i] = new Ostrich("Name", racetrack);
-			}
-			else {
-				racers[i] = new Turtle("Name", racetrack);
-			}
-		}
-	}
+//	public void createRacers(int numRacers) {
+//		racers = new Creature[numRacers];
+//		for(int i = 0; i < racers.length; i++) {
+//			int num1 = rand.nextInt(3);
+//			if(num1 == 0) {
+//				racers[i] = new Monkey("Name", racetrack);
+//			}
+//			else if(num1 == 1) {
+//				racers[i] = new Ostrich("Name", racetrack);
+//			}
+//			else {
+//				racers[i] = new Turtle("Name", racetrack);
+//			}
+//		}
+//	}
 
 	@Override
 	public void advanceOneTurn() {
