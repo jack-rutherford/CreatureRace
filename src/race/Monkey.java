@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class Monkey extends Creature {
 	
-	public Monkey(String name, int speed, char[] track) {
+	public Monkey(String name, char[] track) {
 		super(name, 4, track);
 	}
 
