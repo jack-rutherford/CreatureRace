@@ -12,7 +12,7 @@ private int movementPoints ;
 		public void move() {
 			// TODO Auto-generated method stub
 			Random rand = new Random();
-			movementPoints = rand.nextInt(1,5);
+			movementPoints = rand.nextInt(4)+1;
 			char[] track = this.getTrack();
 			while(movementPoints > 0 && racePos < track.length) {
 				if(track[racePos] == '#') {
@@ -33,7 +33,6 @@ private int movementPoints ;
 				else if (track[racePos] == '0') {
 					movementPoints = 0;
 				}
-				
 		}
 	}
 }
