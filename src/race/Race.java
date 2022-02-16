@@ -77,7 +77,7 @@ public class Race implements RaceInterface {
 			int movePoints = currentRacer.randomMovementPoints(currentRacer.getMaximumSpeed());
 			
 			while(!currentRacer.isWinner()) {
-				currentRacer.move();;
+				currentRacer.move(movePoints);;
 				System.out.println(currentRacer.racePos);
 			}
 		}
