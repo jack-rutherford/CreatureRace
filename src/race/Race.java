@@ -72,12 +72,7 @@ public class Race implements RaceInterface {
 	public void advanceOneTurn() {
 		for(int i = 0; i < racers.length; i++) {
 			Creature currentRacer = racers[i];
-			int movePoints = currentRacer.randomMovementPoints(currentRacer.getMaximumSpeed());
-			
-			while(!currentRacer.isWinner()) {
-				currentRacer.move();
-				System.out.println(currentRacer.getPosition());
-			}
+			currentRacer.move();
 		}
 	}
 
