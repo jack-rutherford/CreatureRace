@@ -31,7 +31,7 @@ public class Project4Main {
 //			System.out.print(creature.getTrack()); //temporary so we can see the track print
 //		}
 		for(int j = 0; j < racersList.length; j++) {
-			
+			//
 		}
 		//race.advanceOneTurn();
 		//result(race);
