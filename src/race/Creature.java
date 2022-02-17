@@ -35,7 +35,7 @@ public abstract class Creature {
 	}
 	
 	/**
-	 * checks if the racer has one by checking their current position
+	 * checks if the racer has won by checking their current position
 	 * @return flag
 	 */
 	public boolean isWinner() {
@@ -83,8 +83,5 @@ public abstract class Creature {
 	/**
 	 * Abstract method for move method
 	 */
-	public abstract void move();
-
-	
-	
+	public abstract void move();	
 }
