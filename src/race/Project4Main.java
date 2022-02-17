@@ -24,11 +24,14 @@ public class Project4Main {
 		Race race = new Race();
 		race.createRace(track,racers);
 		Creature[] racersList = race.getRacers();
-		for(int i = 0; i < racersList.length; i++) {
-			Creature creature = racersList[i];
-			System.out.print("\n" + creature.getCreatureType() + "\t(" + creature.getName() + ")\t"
-			+ i + "\t");
-			System.out.print(creature.getTrack()); //temporary so we can see the track print
+//		for(int i = 0; i < racersList.length; i++) {
+//			Creature creature = racersList[i];
+//			System.out.print("\n" + creature.getCreatureType() + "\t(" + creature.getName() + ")\t"
+//			+ i + "\t");
+//			System.out.print(creature.getTrack()); //temporary so we can see the track print
+//		}
+		for(int j = 0; j < racersList.length; j++) {
+			
 		}
 		//race.advanceOneTurn();
 		//result(race);

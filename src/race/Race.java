@@ -8,11 +8,13 @@ public class Race implements RaceInterface {
 	private static char[] terrain;
 	private Random rand;
 	private Creature[] racers;
+	private String[] names;
 
 
 	public Race(){
 		terrain = new char[] {'.', '#', 'O', '~', '|'};
 		rand = new Random();
+		names = new String[] {"Charles", "Sophia", "Audrey", "Joseph", "Brendan", "Andrew", "Suzanne", "Natalie", "Addison"};
 	}
 
 	@Override
@@ -52,22 +54,23 @@ public class Race implements RaceInterface {
 			}
 		}
 		//System.out.println(racetrack);
-		createRacers(numRacers);
+		createRacers(numRacers, names);
 
 	}
 
-	public void createRacers(int numRacers) {
+	public void createRacers(int numRacers, String[] name) {
 		racers = new Creature[numRacers];
 		for(int i = 0; i < racers.length; i++) {
 			int num1 = rand.nextInt(3);
+			int num2 = rand.nextInt(name.length);
 			if(num1 == 0) {
-				racers[i] = new Monkey("Name", racetrack);
+				racers[i] = new Monkey(name[num2], racetrack);
 			}
 			else if(num1 == 1) {
-				racers[i] = new Ostrich("Name", racetrack);
+				racers[i] = new Ostrich(name[num2], racetrack);
 			}
 			else {
-				racers[i] = new Turtle("Name", racetrack);
+				racers[i] = new Turtle(name[num2], racetrack);
 			}
 		}
 	}
