@@ -22,19 +22,17 @@ public class Race implements RaceInterface {
 
 	@Override
 	public String getRacerName(int racerIndex) {
-		return "";
+		return racers[racerIndex].getName();
 	}
 
 	@Override
 	public int getRacerPosition(int racerIndex) {
-		// TODO Auto-generated method stub
-		return 0;
+		return racers[racerIndex].getPosition();
 	}
 
 	@Override
 	public boolean getRacerIsWinner(int racerIndex) {
-		// TODO Auto-generated method stub
-		return false;
+		return racers[racerIndex].isWinner();
 	}
 
 	@Override
@@ -77,8 +75,8 @@ public class Race implements RaceInterface {
 			int movePoints = currentRacer.randomMovementPoints(currentRacer.getMaximumSpeed());
 			
 			while(!currentRacer.isWinner()) {
-				currentRacer.move(racetrack);;
-				System.out.println(currentRacer.racePos);
+				currentRacer.move();
+				System.out.println(currentRacer.getPosition());
 			}
 		}
 	}
