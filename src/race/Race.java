@@ -70,7 +70,7 @@ public class Race implements RaceInterface {
 
 	@Override
 	public void advanceOneTurn() {
-		for(int i = 0; i < racers.length; i++) {
+		for(int i = 0; i < racers.length-1; i++) {
 			Creature currentRacer = racers[i];
 			currentRacer.move();
 		}

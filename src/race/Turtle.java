@@ -17,8 +17,8 @@ public class Turtle extends Creature {
 		movementPoints = rand.nextInt(2)+1;
 		int racePos = this.getPosition();
 		char[] track = this.getTrack();
-		char pastTrack = track[racePos - 1];
 		char currentTrack = track[racePos];
+		char pastTrack = track[racePos - 1];
 		if(racePos == 0) {
 			while(movementPoints > 0 && racePos < track.length) {
 				{
