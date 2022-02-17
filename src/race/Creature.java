@@ -83,5 +83,7 @@ public abstract class Creature {
 	/**
 	 * Abstract method for move method
 	 */
-	public abstract void move();	
+	public abstract void move();
+	
+	public abstract String getCreatureType();
 }

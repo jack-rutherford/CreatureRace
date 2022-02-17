@@ -67,6 +67,11 @@ public class Monkey extends Creature {
 			}
 		}
 	}
+
+	@Override
+	public String getCreatureType() {
+		return "Monkey";
+	}
 }
 
 

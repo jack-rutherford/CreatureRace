@@ -23,7 +23,14 @@ public class Project4Main {
 
 		Race race = new Race();
 		race.createRace(track,racers);
-		race.advanceOneTurn();
+		Creature[] racersList = race.getRacers();
+		for(int i = 0; i < racersList.length; i++) {
+			Creature creature = racersList[i];
+			System.out.print("\n" + creature.getCreatureType() + "\t(" + creature.getName() + ")\t"
+			+ i + "\t");
+			System.out.print(creature.getTrack()); //temporary so we can see the track print
+		}
+		//race.advanceOneTurn();
 		//result(race);
 	}
 	public static void result(char[] Race){

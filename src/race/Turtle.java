@@ -46,4 +46,9 @@ public class Turtle extends Creature {
 			}
 		}
 	}
+
+	@Override
+	public String getCreatureType() {
+		return "Turtle";
+	}
 }

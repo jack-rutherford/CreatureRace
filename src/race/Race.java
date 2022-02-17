@@ -19,6 +19,10 @@ public class Race implements RaceInterface {
 	public char[] getRacetrack() {
 		return racetrack;
 	}
+	
+	public Creature[] getRacers() {
+		return racers;
+	}
 
 	@Override
 	public String getRacerName(int racerIndex) {
@@ -47,7 +51,7 @@ public class Race implements RaceInterface {
 				racetrack[i] = terrain[num1];
 			}
 		}
-		System.out.println(racetrack);
+		//System.out.println(racetrack);
 		createRacers(numRacers);
 
 	}

@@ -60,6 +60,11 @@ public class Ostrich extends Creature {
 			}
 		}
 	}
+
+	@Override
+	public String getCreatureType() {
+		return "Ostrich";
+	}
 }
 
 
