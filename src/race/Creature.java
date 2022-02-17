@@ -7,7 +7,7 @@ public abstract class Creature {
 	private String name;
 //	private Race race;
 	protected char[] raceTrack;
-	protected int racePos;
+	private int racePos;
 	protected boolean flag;
 
 
