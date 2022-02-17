@@ -22,25 +22,44 @@ public class Ostrich extends Creature {
 		char currentTrack = track[racePos];
 		if(movementPoints < 5 && track[racePos] == '~' || track[racePos] == '.') {
 			movementPoints++;
-		}
-		while(movementPoints > 0 && racePos < track.length) {
-			if(pastTrack != currentTrack) {
+			if(racePos == 0) {
+				while(movementPoints > 0 && racePos < track.length) {
 
-				if(track[racePos] == '#' && movementPoints >= 3) {
-					movementPoints -= 3;
+					if(track[racePos] == '#' && movementPoints >= 3) {
+						movementPoints -= 3;
 
-				}
-				else if(track[racePos] == '|' && movementPoints >= 1) {
-					movementPoints -= 1;
+					}
+					else if(track[racePos] == '|' && movementPoints >= 1) {
+						movementPoints -= 1;
 
-				}
-				else if (track[racePos] == 'O' && movementPoints >= 2) {
-					movementPoints -= 2;
+					}
+					else if (track[racePos] == 'O' && movementPoints >= 2) {
+						movementPoints -= 2;
+					}
+					incrementPosition();
 				}
 			}
-			incrementPosition();
+			else {
+				while(movementPoints > 0 && racePos < track.length) {
+					if(pastTrack != currentTrack) {
+
+						if(track[racePos] == '#' && movementPoints >= 3) {
+							movementPoints -= 3;
+
+						}
+						else if(track[racePos] == '|' && movementPoints >= 1) {
+							movementPoints -= 1;
+
+						}
+						else if (track[racePos] == 'O' && movementPoints >= 2) {
+							movementPoints -= 2;
+						}
+					}
+					incrementPosition();
+				}
+			}
 		}
 	}
-
 }
+
 

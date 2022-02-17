@@ -19,16 +19,31 @@ public class Turtle extends Creature {
 		char[] track = this.getTrack();
 		char pastTrack = track[racePos - 1];
 		char currentTrack = track[racePos];
-		while(movementPoints > 0 && racePos < track.length) {
-			if(pastTrack != currentTrack) {
-				if(track[racePos] == 'O') {
-				}
-				else if(track[racePos] != '0' && movementPoints >= 1) {
-					movementPoints -= 1;
+		if(racePos == 0) {
+			while(movementPoints > 0 && racePos < track.length) {
+				{
+					if(track[racePos] == 'O') {
+					}
+					else if(track[racePos] != '0' && movementPoints >= 1) {
+						movementPoints -= 1;
 
+					}
 				}
+				incrementPosition();
 			}
-			incrementPosition();
+		}
+		else {
+			while(movementPoints > 0 && racePos < track.length) {
+				if(pastTrack != currentTrack) {
+					if(track[racePos] == 'O') {
+					}
+					else if(track[racePos] != '0' && movementPoints >= 1) {
+						movementPoints -= 1;
+
+					}
+				}
+				incrementPosition();
+			}
 		}
 	}
 }

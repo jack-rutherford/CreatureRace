@@ -23,9 +23,12 @@ public class Project4Main {
 
 		Race race = new Race();
 		race.createRace(track,racers);
+		race.advanceOneTurn();
 		//result(race);
 	}
 	public static void result(char[] Race){
+		
+		
 
 	}	
 }		
