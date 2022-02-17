@@ -1,6 +1,10 @@
 package race;
 
+import java.util.Random;
+
 public class Ostrich extends Creature {
+
+	private int movementPoints;
 
 	public Ostrich(String name, char[] track) {
 		super(name, 5, track);
@@ -8,9 +12,35 @@ public class Ostrich extends Creature {
 	}
 
 	@Override
-	public void move(int movePoints) {
+	public void move() {
 		// TODO Auto-generated method stub
-		
+		Random rand = new Random();
+		movementPoints = rand.nextInt(5)+1;
+		int racePos = this.getPosition();
+		char[] track = this.getTrack();
+		char pastTrack = track[racePos - 1];
+		char currentTrack = track[racePos];
+		if(movementPoints < 5 && track[racePos] == '~' || track[racePos] == '.') {
+			movementPoints++;
+		}
+		while(movementPoints > 0 && racePos < track.length) {
+			if(pastTrack != currentTrack) {
+
+				if(track[racePos] == '#' && movementPoints >= 3) {
+					movementPoints -= 3;
+
+				}
+				else if(track[racePos] == '|' && movementPoints >= 1) {
+					movementPoints -= 1;
+
+				}
+				else if (track[racePos] == 'O' && movementPoints >= 2) {
+					movementPoints -= 2;
+				}
+			}
+			incrementPosition();
+		}
 	}
 
 }
+

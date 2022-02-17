@@ -83,7 +83,7 @@ public abstract class Creature {
 	/**
 	 * Abstract method for move method
 	 */
-	public abstract void move(char[] track, int movementPoints);
+	public abstract void move();
 
 	
 	

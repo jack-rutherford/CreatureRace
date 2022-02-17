@@ -1,6 +1,9 @@
 package race;
 
+import java.util.Random;
+
 public class Turtle extends Creature {
+	private int movementPoints;
 
 	public Turtle(String name, char[] track) {
 		super(name, 2, track);
@@ -8,9 +11,24 @@ public class Turtle extends Creature {
 	}
 
 	@Override
-	public void move(int movePoints) {
+	public void move() {
 		// TODO Auto-generated method stub
-		
-	}
+		Random rand = new Random();
+		movementPoints = rand.nextInt(2)+1;
+		int racePos = this.getPosition();
+		char[] track = this.getTrack();
+		char pastTrack = track[racePos - 1];
+		char currentTrack = track[racePos];
+		while(movementPoints > 0 && racePos < track.length) {
+			if(pastTrack != currentTrack) {
+				if(track[racePos] == 'O') {
+				}
+				else if(track[racePos] != '0' && movementPoints >= 1) {
+					movementPoints -= 1;
 
+				}
+			}
+			incrementPosition();
+		}
+	}
 }
