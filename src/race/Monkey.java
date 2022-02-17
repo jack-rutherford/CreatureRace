@@ -40,8 +40,8 @@ public class Monkey extends Creature {
 
 		}
 		else {
-			char pastTrack = track[racePos - 1];
 			char currentTrack = track[racePos];
+			char pastTrack = track[racePos - 1];
 			while(movementPoints > 0 && racePos < track.length) {
 				if(pastTrack != currentTrack) {
 					if(track[racePos] == '#') {
