@@ -13,7 +13,7 @@ public class Project4Main {
 			System.out.println("Enter a number greater than 0");
 			racers = scan.nextInt();
 		}while(racers <= 0);
-		System.out.println("How long is the race track");
+		System.out.println("How long is the race track?");
 		int track;
 		do
 		{
