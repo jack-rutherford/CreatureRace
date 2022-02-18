@@ -2,6 +2,18 @@ package race;
 
 import java.util.Random;
 
+/**
+ * 
+ * This class deals with handling the instance of the racetrack, handling all the racers
+ * creating the race and instantiating the racers, and advancing the race by one turn.
+ * It has an interface called RaceInterface where it implements a bunch of methods.
+ * 
+ * @author jackrutherford
+ * @author bereketbessie
+ * @date 2/18/22
+ * @class CSCI 235
+ *
+ */
 public class Race implements RaceInterface {
 
 	private char[] racetrack;
@@ -14,7 +26,8 @@ public class Race implements RaceInterface {
 	public Race(){
 		terrain = new char[] {'.', '#', 'O', '~', '|'};
 		rand = new Random();
-		names = new String[] {"Charles", "Sophia", "Audrey", "Joseph", "Brendan", "Andrew", "Suzanne", "Natalie", "Addison"};
+		names = new String[] {"Charles", "Sophia", "Audrey", "Joseph", "Brendan", "Andrew", "Suzanne", "Natalie", "Addison",
+				"Clementine", "Cristopher", "Johnathon"};
 	}
 
 	@Override
@@ -22,6 +35,11 @@ public class Race implements RaceInterface {
 		return racetrack;
 	}
 
+	/**
+	 * Accessor method for the creatures array list, that
+	 * holds all the racers
+	 * @return Creature[]
+	 */
 	public Creature[] getRacers() {
 		return racers;
 	}
@@ -57,6 +75,12 @@ public class Race implements RaceInterface {
 
 	}
 
+	/**
+	 * Creates all of the racers with random names from a static list.
+	 * Also instantiates the racers array with the length being
+	 * @param numRacers
+	 * @param name
+	 */
 	public void createRacers(int numRacers, String[] name) {
 		racers = new Creature[numRacers];
 		for(int i = 0; i < racers.length; i++) {
@@ -80,12 +104,10 @@ public class Race implements RaceInterface {
 		while(!trueFlag) {
 			for(int i = 0; i < racers.length; i++) {
 				Creature currentRacer = racers[i];
-//				System.out.print("\n" + currentRacer.getCreatureType() + "\t(" + currentRacer.getName() + ")\t"
-//						+ i + "\t" + currentRacer.getPosition());
 				currentRacer.move();
-				if(currentRacer.isWinner()) {
+				if(getRacerIsWinner(i)) {
 					System.out.println("\n" + currentRacer.getCreatureType() + "  (" + currentRacer.getName() + ")  "
-							+ i + "  Is the winner!");
+							+ (i+1) + "  Is the winner!");
 					trueFlag = true;
 					break;
 				}

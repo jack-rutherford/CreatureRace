@@ -27,8 +27,15 @@ public class Project4Main {
 
 		Creature[] racersList = race.getRacers();
 		for(int i = 0; i < racersList.length; i++) {
-			String str = String.valueOf(race.getRacetrack());
-			
+			Creature currentRacer = racersList[i];
+			String str = String.valueOf(race.getRacetrack()); //turn racetrack array into a string
+			int curPos = racersList[i].getPosition()*2;
+			String str1 = str.replace("", " ").trim(); //put spaces between each character
+			String finStr = str1.substring(0, curPos) + "<" + str1.substring(curPos, curPos+1) + ">"
+					+ str1.substring(curPos+1); // put < > around final character index
+			System.out.print("\n" + currentRacer.getCreatureType() + "\t(" + currentRacer.getName() + ")\t"
+					+ (i+1) + "\t"); //Print the creature type, name, and index
+			System.out.printf("%4s",finStr); 
 		}
 
 	}

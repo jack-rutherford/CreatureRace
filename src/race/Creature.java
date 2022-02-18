@@ -2,6 +2,19 @@ package race;
 
 import java.util.Random;
 
+/**
+ * 
+ * Superclass to the animal classes, contains concrete and abstract methods. 
+ * Handles all information about creatures, like name, a racetrack reference,
+ * their race position, maximum speed, etc. Each subclass overrides the move
+ * method and moves in a unique way
+ * 
+ * @author jackrutherford
+ * @author bereketbessie
+ * @date 2/18/22
+ * @class CSCI 235
+ *
+ */
 public abstract class Creature {
 	private int maximumSpeed;
 	private String name;

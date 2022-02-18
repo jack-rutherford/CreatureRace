@@ -2,6 +2,14 @@ package race;
 
 import java.util.Random;
 
+/**
+ * 
+ * @author jackrutherford
+ * @author bereketbessie
+ * @date 2/18/22
+ * @class CSCI 235
+ *
+ */
 public class Ostrich extends Creature {
 
 	private int movementPoints;
