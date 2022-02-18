@@ -53,7 +53,6 @@ public class Race implements RaceInterface {
 				racetrack[i] = terrain[num1];
 			}
 		}
-		//System.out.println(racetrack);
 		createRacers(numRacers, names);
 
 	}
@@ -64,13 +63,13 @@ public class Race implements RaceInterface {
 			int num1 = rand.nextInt(3);
 			int num2 = rand.nextInt(name.length);
 			if(num1 == 0) {
-				racers[i] = new Monkey(name[num2], racetrack);
+				racers[i] = new Monkey(name[num2], racetrack); //make an monkey with random name
 			}
 			else if(num1 == 1) {
-				racers[i] = new Ostrich(name[num2], racetrack);
+				racers[i] = new Ostrich(name[num2], racetrack); //make an Ostrich with random name
 			}
 			else {
-				racers[i] = new Turtle(name[num2], racetrack);
+				racers[i] = new Turtle(name[num2], racetrack); //make an Turtle with random name
 			}
 		}
 	}
@@ -81,8 +80,8 @@ public class Race implements RaceInterface {
 		while(!trueFlag) {
 			for(int i = 0; i < racers.length; i++) {
 				Creature currentRacer = racers[i];
-				System.out.print("\n" + currentRacer.getCreatureType() + "\t(" + currentRacer.getName() + ")\t"
-						+ i + "\t" + currentRacer.getPosition());
+//				System.out.print("\n" + currentRacer.getCreatureType() + "\t(" + currentRacer.getName() + ")\t"
+//						+ i + "\t" + currentRacer.getPosition());
 				currentRacer.move();
 				if(currentRacer.isWinner()) {
 					System.out.println("\n" + currentRacer.getCreatureType() + "  (" + currentRacer.getName() + ")  "
@@ -91,7 +90,6 @@ public class Race implements RaceInterface {
 					break;
 				}
 			}
-			System.out.println();
 		}
 
 	}
