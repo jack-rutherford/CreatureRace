@@ -17,36 +17,40 @@ public class Turtle extends Creature {
 		movementPoints = rand.nextInt(2)+1;
 		int racePos = this.getPosition();
 		char[] track = this.getTrack();
-		if(racePos == 0) {
-			while(movementPoints > 0 && racePos < track.length) {
-				{
-					if(track[racePos] == 'O') {
-						incrementPosition();
-						break;
-					}
-					else if(track[racePos] != 'O' && movementPoints >= 1) {
-						movementPoints -= 1;
-
-					}
+		int counter1 = 0;
+		while(racePos == 0 && racePos < track.length && movementPoints > 0 && counter1 == 0) {
+			{
+				if(track[racePos] == 'O') {
+					incrementPosition();
 				}
-				incrementPosition();
-				racePos = this.getPosition();
+				else if(track[racePos] != 'O' && movementPoints >= 1) {
+					movementPoints -= 1;
+					incrementPosition();
+
+				}
 			}
+			racePos = this.getPosition();
+			counter1++;
 		}
-		else {
+		while(racePos != 0 && racePos < track.length && movementPoints > 0) {
 			char currentTrack = track[racePos];
 			char pastTrack = track[racePos - 1];
-			while(movementPoints > 0 && racePos < track.length) {
-				if(pastTrack != currentTrack) {
-					if(track[racePos] == 'O') {
-					}
-					else if(track[racePos] != '0' && movementPoints >= 1) {
-						movementPoints -= 1;
-
-					}
+			if(pastTrack != currentTrack) {
+				if(track[racePos] == 'O') {
+					incrementPosition();
 				}
+				if(track[racePos] != 'O' && movementPoints >= 1) {
+					movementPoints -= 1;
+					incrementPosition();
+				}
+				else {
+					break;
+				}
+			}
+			else {
 				incrementPosition();
 			}
+			racePos = this.getPosition();
 		}
 	}
 

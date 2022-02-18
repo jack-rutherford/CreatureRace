@@ -20,47 +20,66 @@ public class Ostrich extends Creature {
 		char[] track = this.getTrack();
 		if(movementPoints < 5 && track[racePos] == '~' || track[racePos] == '.') {
 			movementPoints++;
-			if(racePos == 0) {
-				while(movementPoints > 0 && racePos < track.length) {
+		}
+		int counter1 = 0;
+		
+			while(racePos == 0 && racePos < track.length && movementPoints > 0 && counter1 == 0) {
+
+				if(track[racePos] == '#' && movementPoints >= 3) {
+					movementPoints -= 3;
+					incrementPosition();
+				}
+				else if(track[racePos] == '|' && movementPoints >= 1) {
+					movementPoints -= 1;
+					incrementPosition();
+
+				}
+				else if (track[racePos] == 'O' && movementPoints >= 2) {
+					movementPoints -= 2;
+					incrementPosition();
+				}
+				else if(track[racePos] == '~') {
+					incrementPosition();
+				}
+				else if(track[racePos] == '.') {
+					incrementPosition();
+				}
+				racePos = this.getPosition();
+				counter1++;
+			}
+			while(racePos != 0 && racePos < track.length-1 && movementPoints > 0) {
+				char pastTrack = track[racePos - 1];
+				char currentTrack = track[racePos];
+				if(pastTrack != currentTrack) {
 
 					if(track[racePos] == '#' && movementPoints >= 3) {
 						movementPoints -= 3;
-
+						incrementPosition();
 					}
 					else if(track[racePos] == '|' && movementPoints >= 1) {
 						movementPoints -= 1;
-
+						incrementPosition();
 					}
 					else if (track[racePos] == 'O' && movementPoints >= 2) {
 						movementPoints -= 2;
+						incrementPosition();
 					}
-					incrementPosition();
-					racePos = this.getPosition();
+					if(track[racePos] == '~') {
+						incrementPosition();
+					}
+					else if(track[racePos] == '.') {
+						incrementPosition();
+					}
+					else {
+						break;
+					}
 				}
-			}
-			else {
-				char pastTrack = track[racePos - 1];
-				char currentTrack = track[racePos];
-				while(movementPoints > 0 && racePos < track.length) {
-					if(pastTrack != currentTrack) {
-
-						if(track[racePos] == '#' && movementPoints >= 3) {
-							movementPoints -= 3;
-
-						}
-						else if(track[racePos] == '|' && movementPoints >= 1) {
-							movementPoints -= 1;
-
-						}
-						else if (track[racePos] == 'O' && movementPoints >= 2) {
-							movementPoints -= 2;
-						}
-					}
+				else {
 					incrementPosition();
 				}
+				racePos = this.getPosition();
 			}
 		}
-	}
 
 	@Override
 	public String getCreatureType() {

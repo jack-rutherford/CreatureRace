@@ -15,56 +15,65 @@ public class Monkey extends Creature {
 		movementPoints = rand.nextInt(4)+1;
 		int racePos = this.getPosition();
 		char[] track = this.getTrack();
-		if(racePos == 0) {
-			while(movementPoints > 0 && racePos < track.length) {
+		int counter1 = 0;
+		while(racePos == 0 && racePos < track.length && movementPoints > 0 && counter1 == 0) {
+			if(track[racePos] == '#') {
+				incrementPosition();
+			}
+			else if(track[racePos] == '~' && movementPoints >= 2) {
+				movementPoints -= 2;
+				incrementPosition();
+
+			}
+			else if(track[racePos] == '.' && movementPoints >= 1) {
+				movementPoints -= 1;
+				incrementPosition();
+
+			}
+			else if(track[racePos] == '|' && movementPoints >= 1) {
+				movementPoints -= 1;
+				incrementPosition();
+
+			}
+			else if (track[racePos] == 'O') {
+				movementPoints = 0;
+				incrementPosition();
+			}
+			racePos = this.getPosition();
+			counter1++;
+		}
+		while(racePos != 0 && racePos < track.length-1 && movementPoints > 0) {
+			char pastTrack = track[racePos - 1];
+			char currentTrack = track[racePos];
+			if(pastTrack != currentTrack) {
 				if(track[racePos] == '#') {
+					incrementPosition();
 				}
 				else if(track[racePos] == '~' && movementPoints >= 2) {
 					movementPoints -= 2;
-
+					incrementPosition();
 				}
 				else if(track[racePos] == '.' && movementPoints >= 1) {
 					movementPoints -= 1;
-
+					incrementPosition();
 				}
 				else if(track[racePos] == '|' && movementPoints >= 1) {
 					movementPoints -= 1;
-
+					incrementPosition();
 				}
 				else if (track[racePos] == 'O') {
 					movementPoints = 0;
+					incrementPosition();
 				}
+				else {
+					break;
+				}
+			}
+			else {
 				incrementPosition();
-
 			}
 
-		}
-		else {
-			char currentTrack = track[racePos];
-			char pastTrack = track[racePos - 1];
-			while(movementPoints > 0 && racePos < track.length) {
-				if(pastTrack != currentTrack) {
-					if(track[racePos] == '#') {
-					}
-					else if(track[racePos] == '~' && movementPoints >= 2) {
-						movementPoints -= 2;
-
-					}
-					else if(track[racePos] == '.' && movementPoints >= 1) {
-						movementPoints -= 1;
-
-					}
-					else if(track[racePos] == '|' && movementPoints >= 1) {
-						movementPoints -= 1;
-
-					}
-					else if (track[racePos] == 'O') {
-						movementPoints = 0;
-					}
-				}
-				incrementPosition();
-
-			}
+			racePos = this.getPosition();
 		}
 	}
 

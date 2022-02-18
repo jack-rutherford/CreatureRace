@@ -21,7 +21,7 @@ public class Race implements RaceInterface {
 	public char[] getRacetrack() {
 		return racetrack;
 	}
-	
+
 	public Creature[] getRacers() {
 		return racers;
 	}
@@ -76,11 +76,24 @@ public class Race implements RaceInterface {
 	}
 
 	@Override
-	public void advanceOneTurn() {
-		for(int i = 0; i < racers.length-1; i++) {
-			Creature currentRacer = racers[i];
-			currentRacer.move();
+	public void advanceOneTurn() { //this runs the entire game, but it works :)
+		boolean trueFlag = false;
+		while(!trueFlag) {
+			for(int i = 0; i < racers.length; i++) {
+				Creature currentRacer = racers[i];
+				System.out.print("\n" + currentRacer.getCreatureType() + "\t(" + currentRacer.getName() + ")\t"
+						+ i + "\t" + currentRacer.getPosition());
+				currentRacer.move();
+				if(currentRacer.isWinner()) {
+					System.out.println("\n" + currentRacer.getCreatureType() + "  (" + currentRacer.getName() + ")  "
+							+ i + "  Is the winner!");
+					trueFlag = true;
+					break;
+				}
+			}
+			System.out.println();
 		}
+
 	}
 
 }
