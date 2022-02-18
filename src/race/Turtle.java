@@ -17,22 +17,25 @@ public class Turtle extends Creature {
 		movementPoints = rand.nextInt(2)+1;
 		int racePos = this.getPosition();
 		char[] track = this.getTrack();
-		char currentTrack = track[racePos];
-		char pastTrack = track[racePos - 1];
 		if(racePos == 0) {
 			while(movementPoints > 0 && racePos < track.length) {
 				{
 					if(track[racePos] == 'O') {
+						incrementPosition();
+						break;
 					}
-					else if(track[racePos] != '0' && movementPoints >= 1) {
+					else if(track[racePos] != 'O' && movementPoints >= 1) {
 						movementPoints -= 1;
 
 					}
 				}
 				incrementPosition();
+				racePos = this.getPosition();
 			}
 		}
 		else {
+			char currentTrack = track[racePos];
+			char pastTrack = track[racePos - 1];
 			while(movementPoints > 0 && racePos < track.length) {
 				if(pastTrack != currentTrack) {
 					if(track[racePos] == 'O') {

@@ -28,10 +28,19 @@ public class Project4Main {
 //			Creature creature = racersList[i];
 //			System.out.print("\n" + creature.getCreatureType() + "\t(" + creature.getName() + ")\t"
 //			+ i + "\t");
+//			//creature.move();
 //			System.out.print(creature.getTrack()); //temporary so we can see the track print
 //		}
+		
 		for(int j = 0; j < racersList.length; j++) {
-			//
+			Creature creature = racersList[j];
+			creature.move();
+			
+			if(creature.isWinner()) {
+				System.out.println(creature.getCreatureType() + "  (" + creature.getName() + ")  "
+			+ j + "  Is the winner!");
+				break;
+			}
 		}
 		//race.advanceOneTurn();
 		//result(race);

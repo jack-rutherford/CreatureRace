@@ -5,10 +5,9 @@ import java.util.Random;
 public abstract class Creature {
 	private int maximumSpeed;
 	private String name;
-//	private Race race;
 	protected char[] raceTrack;
 	private int racePos;
-	protected boolean flag;
+	private boolean flag;
 
 
 	public Creature(String name, int movementSpeed, char[] track) {
