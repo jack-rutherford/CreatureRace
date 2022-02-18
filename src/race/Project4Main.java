@@ -24,20 +24,12 @@ public class Project4Main {
 		Race race = new Race();
 		race.createRace(track,racers);
 		race.advanceOneTurn();
-		
+
 		Creature[] racersList = race.getRacers();
 		for(int i = 0; i < racersList.length; i++) {
 			String str = String.valueOf(race.getRacetrack());
 			
 		}
-		
-			
-		//race.advanceOneTurn();
-		//result(race);
-	}
-	public static void result(char[] Race){
-		
-		
 
-	}	
-}		
+	}
+}
