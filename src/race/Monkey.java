@@ -31,8 +31,7 @@ public class Monkey extends Creature {
 		movementPoints = rand.nextInt(4)+1;
 		int racePos = this.getPosition();
 		char[] track = this.getTrack();
-		int counter1 = 0;
-		while(racePos == 0 && racePos < track.length && movementPoints > 0 && counter1 == 0) {
+		while(racePos == 0 && racePos < track.length && movementPoints > 0) {
 			if(track[racePos] == '#') {
 				incrementPosition();
 			}
@@ -56,7 +55,6 @@ public class Monkey extends Creature {
 				incrementPosition();
 			}
 			racePos = this.getPosition();
-			counter1++;
 		}
 		while(racePos != 0 && racePos < track.length-1 && movementPoints > 0) {
 			char pastTrack = track[racePos - 1];

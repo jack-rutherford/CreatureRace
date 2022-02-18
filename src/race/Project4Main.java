@@ -43,7 +43,7 @@ public class Project4Main {
 			System.out.print("\n" + currentRacer.getCreatureType() + "\t(" + currentRacer.getName() + ")\t"
 					+ (i+1) + "\t"); //Print the creature type, name, and index
 			for(int j = 0; j < racerTrack.length; j++) { //print the char[] racetrack
-				if(j == currentRacer.getPosition()-1) {
+				if(j == currentRacer.getPosition()) {
 					System.out.print("<" + racerTrack[j] + "> ");
 				}
 				else {
