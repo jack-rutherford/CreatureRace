@@ -109,7 +109,6 @@ public class Race implements RaceInterface {
 					System.out.println("\n" + currentRacer.getCreatureType() + "  (" + currentRacer.getName() + ")  "
 							+ (i+1) + "  Is the winner!");
 					trueFlag = true;
-					break;
 				}
 			}
 		}
