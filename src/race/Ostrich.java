@@ -4,6 +4,9 @@ import java.util.Random;
 
 /**
  * 
+ * Ostrich class with a max movement speed of 5. Overrides the move method from
+ * the creature class to move in its own unique way
+ * 
  * @author jackrutherford
  * @author bereketbessie
  * @date 2/18/22
@@ -20,6 +23,11 @@ public class Ostrich extends Creature {
 	}
 
 	@Override
+	/**
+	 * Overridden method from the superclass Creature
+	 * Ostrich moves in a unique way with random movement
+	 * points, and moves differently depending on the terrain
+	 */
 	public void move() {
 		// TODO Auto-generated method stub
 		Random rand = new Random();
@@ -29,9 +37,8 @@ public class Ostrich extends Creature {
 		if(movementPoints < 5 && track[racePos] == '~' || track[racePos] == '.') {
 			movementPoints++;
 		}
-		int counter1 = 0;
 		
-			while(racePos == 0 && racePos < track.length && movementPoints > 0 && counter1 == 0) {
+			while(racePos == 0 && racePos < track.length && movementPoints > 0) {
 
 				if(track[racePos] == '#' && movementPoints >= 3) {
 					movementPoints -= 3;
@@ -52,8 +59,10 @@ public class Ostrich extends Creature {
 				else if(track[racePos] == '.') {
 					incrementPosition();
 				}
+				else {
+					break;
+				}
 				racePos = this.getPosition();
-				counter1++;
 			}
 			while(racePos != 0 && racePos < track.length-1 && movementPoints > 0) {
 				char pastTrack = track[racePos - 1];
@@ -90,6 +99,10 @@ public class Ostrich extends Creature {
 		}
 
 	@Override
+	/**
+	 * Returns the creature type for Monkey
+	 * @return "Ostrich"
+	 */
 	public String getCreatureType() {
 		return "Ostrich";
 	}

@@ -2,6 +2,17 @@ package race;
 
 import java.util.Scanner;
 
+/**
+ * 
+ * Main class that handles all the printing and interacting with the user,
+ * and actually running the entire game through
+ * 
+ * @author jackrutherford
+ * @author bereketbessie
+ * @date 2/18/22
+ * @class CSCI 235
+ *
+ */
 public class Project4Main {
 
 	public static void main(String[] args) {
@@ -31,7 +42,7 @@ public class Project4Main {
 			char[] racerTrack = currentRacer.getTrack();
 			System.out.print("\n" + currentRacer.getCreatureType() + "\t(" + currentRacer.getName() + ")\t"
 					+ (i+1) + "\t"); //Print the creature type, name, and index
-			for(int j = 0; j < racerTrack.length; j++) {
+			for(int j = 0; j < racerTrack.length; j++) { //print the char[] racetrack
 				if(j == currentRacer.getPosition()-1) {
 					System.out.print("<" + racerTrack[j] + "> ");
 				}

@@ -97,5 +97,9 @@ public abstract class Creature {
 	 */
 	public abstract void move();
 	
+	/**
+	 * Returns the creature type from the subclass
+	 * @return String
+	 */
 	public abstract String getCreatureType();
 }

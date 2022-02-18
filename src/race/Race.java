@@ -31,6 +31,10 @@ public class Race implements RaceInterface {
 	}
 
 	@Override
+	/**
+	 * Returns a char array representing the racetrack
+	 * @return char[]
+	 */
 	public char[] getRacetrack() {
 		return racetrack;
 	}
@@ -45,21 +49,41 @@ public class Race implements RaceInterface {
 	}
 
 	@Override
+	/**
+	 * Returns the name of the racer at the given index
+	 * @param racerIndex
+	 * @return String
+	 */
 	public String getRacerName(int racerIndex) {
 		return racers[racerIndex].getName();
 	}
 
 	@Override
+	/**
+	 * Returns the position of the racer at the given index
+	 * @param racerIndex
+	 * @return int
+	 */
 	public int getRacerPosition(int racerIndex) {
 		return racers[racerIndex].getPosition();
 	}
 
 	@Override
+	/**
+	 * Returns whether or not the racer at the given index is a winner
+	 * @param racerIndex
+	 * @return boolean
+	 */
 	public boolean getRacerIsWinner(int racerIndex) {
 		return racers[racerIndex].isWinner();
 	}
 
 	@Override
+	/**
+	 * Creates the racetrack of the given length and instantiates ‘numRacers’ number of racers
+	 * @param length
+	 * @param numRacers
+	 */
 	public void createRace(int length, int numRacers) {
 		racetrack = new char[length];
 		for(int i = 0; i < racetrack.length; i++) {
@@ -99,6 +123,10 @@ public class Race implements RaceInterface {
 	}
 
 	@Override
+	/**
+	 * Causes each racer to move one turn at a time, moving a number of spaces based on their
+	 * movement speed and the terrain
+	 */
 	public void advanceOneTurn() { //this runs the entire game, but it works :)
 		boolean trueFlag = false;
 		while(!trueFlag) {

@@ -4,6 +4,9 @@ import java.util.Random;
 
 /**
  * 
+ * Monkey class with a max movement speed of 4. Overrides the move method from
+ * the creature class to move in its own unique way
+ * 
  * @author jackrutherford
  * @author bereketbessie
  * @date 2/18/22
@@ -17,6 +20,11 @@ public class Monkey extends Creature {
 	}
 
 	@Override
+	/**
+	 * Overridden method from the superclass Creature
+	 * Monkey moves in a unique way with random movement
+	 * points, and moves differently depending on the terrain
+	 */
 	public void move() {
 		// TODO Auto-generated method stub
 		Random rand = new Random();
@@ -86,6 +94,10 @@ public class Monkey extends Creature {
 	}
 
 	@Override
+	/**
+	 * Returns the creature type for Monkey
+	 * @return "Monkey"
+	 */
 	public String getCreatureType() {
 		return "Monkey";
 	}

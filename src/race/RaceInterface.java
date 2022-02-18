@@ -12,7 +12,6 @@ public interface RaceInterface {
 	 * @param racerIndex
 	 * @return String
 	 */
-	
 	String getRacerName(int racerIndex);
 	
 	/**
