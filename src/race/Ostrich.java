@@ -17,6 +17,12 @@ public class Ostrich extends Creature {
 
 	private int movementPoints;
 
+	/**
+	 * Constructor for the ostrich subclass
+	 * Passes information to creature superclass
+	 * @param name
+	 * @param track
+	 */
 	public Ostrich(String name, char[] track) {
 		super(name, 5, track);
 		// TODO Auto-generated constructor stub
@@ -24,6 +30,9 @@ public class Ostrich extends Creature {
 
 	@Override
 	/**
+	 * Pre condition: The ostrich has a position ahead of it to move to
+	 * Post condition: The ostrich moves ahead a position, or multiple depending
+	 * on the terrain and its movement points
 	 * Overridden method from the superclass Creature
 	 * Ostrich moves in a unique way with random movement
 	 * points, and moves differently depending on the terrain
@@ -100,6 +109,8 @@ public class Ostrich extends Creature {
 
 	@Override
 	/**
+	 * Pre condition: none
+	 * Post condition: returns a String of the creature type
 	 * Returns the creature type for Monkey
 	 * @return "Ostrich"
 	 */

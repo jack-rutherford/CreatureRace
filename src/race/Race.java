@@ -22,7 +22,10 @@ public class Race implements RaceInterface {
 	private Creature[] racers;
 	private String[] names;
 
-
+	/**
+	 * Constructor for Race class
+	 * instantiates the terrain array, Random field, and names array
+	 */
 	public Race(){
 		terrain = new char[] {'.', '#', 'O', '~', '|'};
 		rand = new Random();
@@ -32,6 +35,8 @@ public class Race implements RaceInterface {
 
 	@Override
 	/**
+	 * Pre condition: the racetrack array has been instantiated
+	 * Post condition: returning the racetrack array
 	 * Returns a char array representing the racetrack
 	 * @return char[]
 	 */
@@ -40,6 +45,9 @@ public class Race implements RaceInterface {
 	}
 
 	/**
+	 * Pre condition: the racers array has been instantiated and filled with racers
+	 * of types of the subclasses of creature
+	 * Post condition: returning the array of racers (type creature)
 	 * Accessor method for the creatures array list, that
 	 * holds all the racers
 	 * @return Creature[]
@@ -50,6 +58,8 @@ public class Race implements RaceInterface {
 
 	@Override
 	/**
+	 * Pre condition: racerIndex >= 0 and racers has been created
+	 * Post consition: returning the name of the racer at a given index
 	 * Returns the name of the racer at the given index
 	 * @param racerIndex
 	 * @return String
@@ -60,6 +70,8 @@ public class Race implements RaceInterface {
 
 	@Override
 	/**
+	 * Pre condition: racerIndex >= 0 and racers has been created
+	 * Post consition: returning the position of the racer at a given index
 	 * Returns the position of the racer at the given index
 	 * @param racerIndex
 	 * @return int
@@ -70,7 +82,8 @@ public class Race implements RaceInterface {
 
 	@Override
 	/**
-	 * Returns whether or not the racer at the given index is a winner
+	 * Pre condition: racerIndex >= 0 and racers has been created
+	 * Post consition: returning a boolean if the racers index is at the end of the racetrack
 	 * @param racerIndex
 	 * @return boolean
 	 */
@@ -80,6 +93,8 @@ public class Race implements RaceInterface {
 
 	@Override
 	/**
+	 * Pre condition: length and numRacers are > 0
+	 * Post condition: create a char[] race track that has a length of 'length'
 	 * Creates the racetrack of the given length and instantiates ‘numRacers’ number of racers
 	 * @param length
 	 * @param numRacers
@@ -100,6 +115,10 @@ public class Race implements RaceInterface {
 	}
 
 	/**
+     * Pre condition: the array of Strings is created with names in them and
+     * numRacers > 0
+	 * Post consition: instantiates an array of creatures of length 'numRacers'
+	 * and fills it randomly with the creature subclasses
 	 * Creates all of the racers with random names from a static list.
 	 * Also instantiates the racers array with the length being
 	 * @param numRacers
@@ -124,6 +143,8 @@ public class Race implements RaceInterface {
 
 	@Override
 	/**
+	 * Pre condition: the creature is not at the end of the racetrack
+	 * Post condition: the creature moves
 	 * Causes each racer to move one turn at a time, moving a number of spaces based on their
 	 * movement speed and the terrain
 	 */

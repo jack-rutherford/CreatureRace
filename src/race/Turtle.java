@@ -14,8 +14,15 @@ import java.util.Random;
  *
  */
 public class Turtle extends Creature {
+	
 	private int movementPoints;
-
+	
+	/**
+	 * Constructor for the turtle subclass
+	 * Passes information to creature superclass
+	 * @param name
+	 * @param track
+	 */
 	public Turtle(String name, char[] track) {
 		super(name, 2, track);
 		// TODO Auto-generated constructor stub
@@ -23,6 +30,9 @@ public class Turtle extends Creature {
 
 	@Override
 	/**
+	 * Pre condition: The turtle has a position ahead of it to move to
+	 * Post condition: The turtle moves ahead a position, or multiple depending
+	 * on the terrain and its movement points
 	 * Overridden method from the superclass Creature
 	 * Turtle moves in a unique way with random movement
 	 * points, and moves differently depending on the terrain
@@ -70,7 +80,9 @@ public class Turtle extends Creature {
 
 	@Override
 	/**
-	 * Returns the creature type for Monkey
+	 * Pre condition: none
+	 * Post condition: returns a String of the creature type 
+	 * Returns the creature type for Turtle
 	 * @return "Turtle"
 	 */
 	public String getCreatureType() {

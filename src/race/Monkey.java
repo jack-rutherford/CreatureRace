@@ -14,13 +14,24 @@ import java.util.Random;
  *
  */
 public class Monkey extends Creature {
-	private int movementPoints ; 
+	
+	private int movementPoints ;
+	
+	/**
+	 * Constructor for the monkey subclass
+	 * Passes information to creature superclass
+	 * @param name
+	 * @param track
+	 */
 	public Monkey(String name, char[] track) {
 		super(name, 4, track);
 	}
 
 	@Override
 	/**
+	 * Pre condition: The monkey has a position ahead of it to move to
+	 * Post condition: The monkey moves ahead a position, or multiple depending
+	 * on the terrain and its movement points
 	 * Overridden method from the superclass Creature
 	 * Monkey moves in a unique way with random movement
 	 * points, and moves differently depending on the terrain
@@ -93,6 +104,8 @@ public class Monkey extends Creature {
 
 	@Override
 	/**
+	 * Pre condition: none
+	 * Post condition: returns a String of the creature type
 	 * Returns the creature type for Monkey
 	 * @return "Monkey"
 	 */
